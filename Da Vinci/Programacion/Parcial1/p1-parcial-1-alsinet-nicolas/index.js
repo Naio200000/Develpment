@@ -3,40 +3,85 @@
 /*
  * Alsinet, Nicolas
  */
-
-// Ejemplo de la estructura de un disco:
-let disco = {
-    Nombre: '',
-    Autor: '',
-    Codigo: '',
-    Pistas: [],
+let disco1 = {
+    Nombre: 'DIsco1',
+    Autor: 'Yo',
+    Codigo: 1,
+    Pistas: [
+        {
+            Nombre: 'Pista1',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista2',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista3',
+            Duracion: '123',
+        }
+    ]
 };
-let nombre = '';
-let autor = '';
-let codigo = 0;
-let pista = {
-        Nombre: '',
-        Duracion: '',
-    };
-// Discos:
-let discos = [];
+let disco2 = {
+    Nombre: 'DIsco2',
+    Autor: 'Yo',
+    Codigo: 2,
+    Pistas: [
+        {
+            Nombre: 'Pista1',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista2',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista3',
+            Duracion: '123',
+        }
+    ]
+};
+let disco3 = {
+    Nombre: 'DIsco3',
+    Autor: 'Yo',
+    Codigo: 3,
+    Pistas: [
+        {
+            Nombre: 'Pista1',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista2',
+            Duracion: '123',
+        },
+        {
+            Nombre: 'Pista3',
+            Duracion: '123',
+        }
+    ]
+};
+// Ejemplo de la estructura de un disco:
+
+let codigos = [1,2,3];
+let pistas = [];
+let discos = [disco1, disco2, disco3];
 
 // Función Cargar:
 const Cargar = () => {
-    nombre = validaTexto('Ingrese el Nombre del Disco');
-    autor = validaTexto('Ingrese el Nombre del Autor');
-    pedirCodigo();
-    pedirPista();
-    armarDisco(nombre, autor, codigo, pista);
-    agregarDisco();
-    console.log(discos);
+    let nombre = validaTexto('Ingrese el Nombre del Disco');
+    let autor = validaTexto('Ingrese el Nombre del Autor');
+    let codigo = pedirCodigo();
+    let pistas = armarPistas();
+    let disco = armarDisco(nombre, autor, codigo, pistas);
+    agregarDisco(disco);
+    return discos;
 };
 
 // Función Mostrar:
 const Mostrar = () => {
     // Variable para ir armando la cadena:
-    let html = '';
-
+    let html = ``;
+    generarDiscos();
     // Cositas:
 
     // Si modificaste el nombre de la variable para ir armando la cadena, también hacelo acá:
@@ -44,46 +89,28 @@ const Mostrar = () => {
 };
 
 // Todas las funciones que necesites:
-function validaTexto (mensaje) {
-    let textoValido;
-    do {
-        textoValido = prompt(mensaje);
-        if (textoValido == '')
-            mensaje = 'Este campo no puede quedar Vacío'
-    } while (textoValido == '')
-    return textoValido
+
+function generarDiscos() {
+    let html;
+    for (let i = 0; i < discos.length; i++) {
+        
+        html = html + `<div class="info">
+                            <div>
+                                <h3>${discos[i].Nombre}</h3>
+                                <p><b>Autor:</b>${discos[i].Autor}</p>
+                                <p><b>Código:</b>${discos[i].Codigo}</p>
+                            </div>
+                            <div>
+                                <p><b>Pista:</b>${discos[i].Pistas[0].Nombre}</p>
+                                <p><b>DUración</b>${discos[i].Pistas[0].Duracion}</p>
+                                <p><b>Pista:</b>${discos[i].Pistas[1].Nombre}</p>
+                                <p><b>DUración</b>${discos[i].Pistas[1].Duracion}</p>
+                                <p><b>Pista:</b>${discos[i].Pistas[2].Nombre}</p>
+                                <p><b>DUración</b>${discos[i].Pistas[2].Duracion}</p>
+                            </div>
+                        </div>`
+        
+    }
+    return html
 }
-// function pedirNombre () {
-//     nombre = prompt('Ingrese el Nombre del Disco');
-//     return nombre
-// }
-// function pedirAutor () {
-//     autor = prompt('Ingrese el Nombre del Autor');
-//     return autor
-// }
-function pedirCodigo () {
-    codigo = parseInt(prompt('Ingrese el codigo de ingreso'));
-    return codigo
-}
-function pedirPista () {
-    let nombrePista = prompt('Ingrese Nombre de la pista');
-    let duracionPista = parseInt(prompt('Ingrese Duracion de la pista'));
-    pista = {
-        Nombre: nombrePista,
-        Duracion: duracionPista,
-    };
-    return pista
-}
-function armarDisco (nombre, autor, codigo, pistas) {
-    disco = {
-        Nombre: nombre,
-        Autor: autor,
-        Codigo: codigo,
-        Pistas: pistas
-    };
-    return disco;
-}
-function agregarDisco () {
-    discos.push(disco)
-    return discos;
-}
+
