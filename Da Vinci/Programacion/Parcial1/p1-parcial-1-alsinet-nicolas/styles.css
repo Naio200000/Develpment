@@ -64,13 +64,17 @@ h2 {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    padding: 4em 2em;
+    background-color: #FFF;
+}
+main > .botonera {
+    display: flex;
+    flex-direction: column;
     padding: 4em 2em;
     background-color: #FFF;
 }
 
-main button {
+.botonera button {
     margin: .5em 0;
     border: none;
     border-radius: .5em;
@@ -90,8 +94,12 @@ main button {
     color: black;
     justify-content: space-evenly;
 }
-.info div {
+.info > div {
     flex: 1 1 50%;
+    font-size: 2em;
+}
+.rojo {
+    color: red;
 }
 /** Footer */
 footer {

@@ -5,7 +5,8 @@
         <title>Programación I | Parcial 1 | Alsinet, Nicolas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
         <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href="styles.css" />
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link rel="stylesheet" href="main.css" />
     </head>
     <body>
         <header>
@@ -13,9 +14,84 @@
         </header>
         <main>
             <h2>Mis discos</h2>
-            <button onclick="Cargar();">Cargar nuevo disco</button>
-            <button onclick="Mostrar();">Mostrar discos</button>
-            <div id="info">
+            <div class="botonera-lista">
+                <div class="botonera">
+                    <button onclick="Cargar();">Cargar nuevo disco</button>
+                    <button onclick="Mostrar();">Mostrar discos</button>
+                    <button onclick="Buscar();">Buscar disco</button>
+                </div>
+                <div class="disc-list" id="disc-list">
+                    <h3>Lista de Discos</h3>
+                    <p id="total-disc">Total: 4</p>
+                    <table id="disc-list_tabla" class="disc-list_tabla">
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre del Disco</th>
+                            <th>Autor</th>
+                            <th>Pistas</th>
+                            <th>Duración</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Disco 1</td>
+                            <td>Yo</td>
+                            <td>3</td>
+                            <td>500s</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Disco 2</td>
+                            <td>Yo</td>
+                            <td>66</td>
+                            <td>530s</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Disco</td>
+                            <td>Alguien</td>
+                            <td>10</td>
+                            <td>1000s</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Nombre Random</td>
+                            <td>Alguien</td>
+                            <td>5</td>
+                            <td>800s</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="info" id="info">
+                <div class="info_disco">
+                    <h3>Disco 1</h3>
+                    <h3>Yo</h3>
+                    <p>Código 1</p>
+                </div>
+                <div class="info_pistas">
+                    <table>
+                        <tr>
+                            <th>Pista</th>
+                            <th>Nombre</th>
+                            <th>Duración</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pista 1</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Segundo</td>
+                            <td>123</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Cualquiera</td>
+                            <td>333</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </main>
         <footer>
@@ -28,6 +104,6 @@
             </ul>
         </footer>
     </body>
-    <script src="index.js"></script>
     <script src="funcionesCarga.js"></script>
+    <script src="index.js"></script>
 </html>

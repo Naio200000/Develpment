@@ -7,9 +7,9 @@
     let textoValido;
     do {
         textoValido = prompt(mensaje);
-        if (textoValido == '')
-            alert(`Este campo no puede queda vacío`);
-    } while (textoValido == '')
+        if (textoValido == '' || textoValido == null)
+        alert(`Este campo no puede queda vacío`);
+    } while (textoValido == ''|| textoValido == null)
     return textoValido
 }
 /**
@@ -25,7 +25,7 @@ function validarNumero (mensaje,min,max) {
     do {
         numeroValido = parseInt(prompt(mensaje));
         if (isNaN(numeroValido) || numeroValido < min || numeroValido > max) {
-            alert(`Debe ingresar un numero entre los valores 1 al 999 inclusives`);
+            alert(`Debe ingresar un numero entre los valores ${min} al ${max} inclusives`);
         } else {
             flag = true;
         }
@@ -38,11 +38,9 @@ function validarNumero (mensaje,min,max) {
  */
 function pedirCodigo() {
     let codigoValido;
-    let flag
     do {
         codigoValido = validarNumero(`Ingrese el codigo único del Disco`,1,999);
-        flag = almacenaCodigos(codigoValido);
-    } while (!flag)
+    } while (!almacenaCodigos(codigoValido))
     codigos.push(codigoValido);
     return codigoValido
 }
@@ -70,7 +68,7 @@ function almacenaCodigos(codigo) {
  */
 function pedirPista () {
     let nombrePista = validaTexto(`ingrese el nombre de la Pista`);
-    let duracionPista = validarNumero('Ingrese duracion de la Pista en segundos',1,720);
+    let duracionPista = validarNumero('Ingrese duración de la Pista en segundos',1,7200);
     let pista = {
         Nombre: nombrePista,
         Duracion: duracionPista
@@ -82,6 +80,7 @@ function pedirPista () {
  * @returns Array de objetos con las pistas
  */
 function armarPistas() {
+    pistas = [];
     do {
         pista = pedirPista()
         pistas.push(pista);

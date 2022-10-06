@@ -1,0 +1,159 @@
+/*
+Imports and links
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+/*
+Estilos generales
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    color: #D0E0E3;
+}
+header, 
+footer {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #134F5C;
+}
+main {
+    width: 1200px;
+    margin: 0 auto;
+    max-height: calc(100vh - 174px);
+}
+/*
+Encabezado
+*/
+
+h1 {
+    padding: .5em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/*
+Main
+*/
+main {
+    background-color: #fff;
+}
+h2 {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2em;
+    color: #134F5C;
+}
+.botonera-lista {
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    max-height: 100%;
+    
+}
+/*
+Botones
+*/
+.botonera {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%;
+}
+
+.botonera button {
+    margin: .5em 0;
+    padding: .25em .5em;
+    max-width: 350px;
+    border: none;
+    border-radius: .5em;
+    background: #134F5C;
+    cursor: pointer;
+    font-size: 2em;
+    line-height: 1.5;
+    text-align: center;
+    color: #D0E0E3;
+
+}
+/*
+Lista
+*/
+.disc-list {
+    padding: .5rem 1rem;
+    border-radius: .5em;
+    background: #134F5C;
+    overflow-y: auto;
+    max-height: 40vh;
+    flex: 1 1 55%;
+}
+.disc-list h3,
+.disc-list p  {
+    margin: .5em;
+    display: inline-block;
+    width: calc(50% - 2rem);
+}
+.disc-list p {
+    text-align: right;
+}
+.disc-list_tabla {
+    width: 100%;
+    text-align: center;
+}
+.disc-list_tabla th,
+.disc-list_tabla td {
+    line-height: 1.5;
+}
+.disc-list_tabla  td {
+    cursor: pointer;
+}
+/*
+Disco Seleccionado
+*/
+.info {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: .5em;
+    background: #134F5C;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.info_disco,
+.info_pistas {
+    padding: 0 3rem;
+}
+
+/*
+Footer
+*/
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    list-style: none;
+}
+
+footer a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #D0E0E3;
+}
+
+/*
+Hovers
+*/
+footer a:hover {
+    color: white;
+    text-shadow: 2px 2px 1px white;
+}
