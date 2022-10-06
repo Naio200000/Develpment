@@ -13,7 +13,7 @@
     return textoValido
 }
 /**
- * Valida numeros ingresados
+ * Valida números ingresados
  * @param {*Mensaje del prompt} mensaje 
  * @param {*Rango minimo del numero a validar} min 
  * @param {*Rango maximo del numero a validar} max 

@@ -71,7 +71,7 @@ let discos = [];
  * Hace todo el llamado a los prompts para perdir los datos y genera el disco
  * el cual se pushea en el array de discos
  * @returns Array de discos 
- * Faltaría validar si apretó por error
+ * Faltaría validar si apretó por error.
  */
 const Cargar = () => {
     let nombre = validaTexto('Ingrese el Nombre del Disco', true);
