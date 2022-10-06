@@ -20,12 +20,12 @@ body {
 }
 header, 
 footer {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #134F5C;
 }
 main {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     max-height: calc(100vh - 174px);
 }
@@ -120,17 +120,39 @@ Lista
 Disco Seleccionado
 */
 .info {
-    margin: 1rem 0;
+    margin: 1rem;
     padding: 1rem;
-    border-radius: .5em;
-    background: #134F5C;
+    background: white;
     overflow-y: auto;
     display: flex;
     justify-content: space-between;
+    
 }
 .info_disco,
 .info_pistas {
-    padding: 0 3rem;
+    background: #134F5C;
+    flex: 1 1 100%;
+    padding: 0 2rem;
+    overflow-y: auto;
+    max-height: 15vh;
+    flex: 1 1 55%;
+}
+.info_disco {
+    border-radius: .5em 0 0 .5em;
+}
+.info_disco * {
+    padding: .5em 2rem;
+}
+.info_disco :first-child {
+    font-size: 2rem;
+}
+.info_pistas table{
+    width: 100%;
+    text-align: center;
+}
+.info_pistas-tabla th,
+.info_pistas-tabla td {
+    line-height: 1.5;
 }
 
 /*
@@ -155,5 +177,5 @@ Hovers
 */
 footer a:hover {
     color: white;
-    text-shadow: 2px 2px 1px white;
+    text-shadow: 1px 1px 1px white;
 }

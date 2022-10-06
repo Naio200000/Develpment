@@ -99,7 +99,7 @@ function generarDiscos() {
     let html = ``;
     let divDisco = ``;
     let divPistas = ``;
-    let discopista = ``;
+    let discoPista = ``;
     for (let i = 0; i < discos.length; i++) {
         divDisco = `<h3>${discos[i].Nombre}</h3>
                 <p><b>Autor: </b>${discos[i].Autor}</p>
@@ -116,9 +116,9 @@ function generarDiscos() {
 
             }
         }
-        discopista += '<div>' + divDisco + '</div><div>'+ divPistas + '</div>';
+        discoPista += '<div>' + divDisco + '</div><div>'+ divPistas + '</div>';
     }
-    html = '<div class="info">' + discopista + '</div>';
+    html = '<div class="info">' + discoPista + '</div>';
     return html
 }
 
