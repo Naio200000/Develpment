@@ -1,4 +1,4 @@
-//m
+
  function generarDiscos() {
     let html = ``;
     let divDisco = ``;

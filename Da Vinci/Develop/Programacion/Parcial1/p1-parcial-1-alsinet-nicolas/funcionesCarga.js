@@ -1,5 +1,5 @@
 /**
- * m
+ * 
  * @param {Texto del prompt} mensaje 
  * @returns texto valido
  */

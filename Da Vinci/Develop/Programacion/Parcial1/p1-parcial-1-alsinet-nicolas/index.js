@@ -60,7 +60,7 @@ let disco3 = {
         }
     ]
 };
-
+//g
 // Ejemplo de la estructura de un disco:
 
 let codigos = [];
