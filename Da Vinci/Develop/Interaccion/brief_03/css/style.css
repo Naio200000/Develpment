@@ -2,7 +2,10 @@
     src: url('../fonts/STARGATE.TTF');
     font-family: 'stargate';
 }
-
+body {
+    width:80% ;
+    margin: 0 auto;
+}
 * {
     margin: 0px;
     padding: 0px;
