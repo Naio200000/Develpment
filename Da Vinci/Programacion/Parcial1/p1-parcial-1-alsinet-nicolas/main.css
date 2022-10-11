@@ -100,10 +100,11 @@ Lista
 .disc-list p  {
     margin: .5em;
     display: inline-block;
-    width: calc(50% - 2rem);
-}
-.disc-list p {
+    width: calc(33% - 2rem);
     text-align: right;
+}
+#total-disc {
+    text-align: left;
 }
 .disc-list_tabla {
     width: 100%;
@@ -140,9 +141,12 @@ Disco Seleccionado
 .info_disco {
     border-radius: .5em 0 0 .5em;
 }
-.info_disco * {
-    padding: .5em 2rem;
+.info_disco > * {
+    display: inline-block;
+    padding: .25em 1rem;
+    width: calc(50% - 1rem);
 }
+
 .info_disco :first-child {
     font-size: 2rem;
 }

@@ -7,6 +7,8 @@
         <link rel="shortcut icon" href="favicon.ico" />
         <!-- <link rel="stylesheet" href="styles.css"> -->
         <link rel="stylesheet" href="main.css" />
+        <script src="funcionesCarga.js"></script>
+        <script src="index.js"></script>
     </head>
     <body>
         <header>
@@ -22,16 +24,62 @@
                 </div>
                 <div class="disc-list" id="disc-list">
                     <h3>Lista de Discos</h3>
-                    <p id="total-disc"></p>
+                    <p>Total</p>
+                    <p id="total-disc">3</p>
                     <table id="disc-list_tabla" class="disc-list_tabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Discot</th>
+                            <th>Artista</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>DIsco 1</td>
+                            <td>Yo</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Disco 2</td>
+                            <td>Tu</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Disco 3</td>
+                            <td>El</td>
+                        </tr>
                     </table>
                 </div>
             </div>
+            
             <div class="info" id="info">
                 <div class="info_disco">
+                    <h3>Disco 1</h3>
+                    <h3>Yo</h3>
+                    <p>Codigo</p>
+                    <p id="info_disco-codigo">1</p>
+                    <P>Pistas</P>
+                    <p id="info_disco-pistas">3 pistas</p>
+                    <p>Duración</p>
+                    <p id="info_disco-duracion">600s</p>
                 </div>
                 <div class="info_pistas">
                     <table class="info_pistas-tabla">
+                        <tr>
+                            <th>Pista</th>
+                            <th>Duracion</th>
+                        </tr>
+                        <tr>
+                            <td>Pista 1</td>
+                            <td>200s</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 2</td>
+                            <td>200s</td>
+                        </tr>
+                        <tr>
+                            <td>Pista 3</td>
+                            <td>200s</td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -46,7 +94,5 @@
             </ul>
         </footer>
     </body>
-    <script src="funcionesCarga.js"></script>
-    <script src="index.js"></script>
-    
+    <script src="funcionesMostrar.js"></script>
 </html>
