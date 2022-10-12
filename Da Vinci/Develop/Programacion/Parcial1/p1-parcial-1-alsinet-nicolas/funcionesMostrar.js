@@ -64,7 +64,31 @@ function generaBoton(dato) {
     td.appendChild(boton)
     return td
 }
-mostrarDiscos()
+function crearDisco(disco) {
+    document.getElementById('info_disco-nombre').innerHTML = disco.Nombre;
+    document.getElementById('info_disco-autor').innerHTML = disco.Autor;
+    document.getElementById('info_disco-codigo').innerHTML = disco.Codigo;
+    document.getElementById('info_disco-pistas').innerHTML = disco.Pista.length;
+    document.getElementById('info_disco-duracion').innerHTML = calcularDuracion();
+    for (i = 0; i < discos.length; i++) {
+        let table_row = document.createElement('tr');
+        let table_nombre = document.createElement('td');
+        let table_autor = document.createElement('td');
+        let table_codigo = document.createElement('td');
+        let table_boton = generaBoton(discos[i].Codigo)
+        table_nombre.innerHTML = discos[i].Nombre;
+        table_autor.innerHTML = discos[i].Autor;
+        table_codigo.innerHTML = discos[i].Codigo;
+        table_row.appendChild(table_codigo);
+        table_row.appendChild(table_nombre);
+        table_row.appendChild(table_autor);
+        table_row.appendChild(table_boton);
+        listaDiscos.appendChild(table_row)
+    }
+}
 
-// let boton = document.getElementsByTagName('td')
-// boton.addEventListener('click', )
+let boton = document.getElementsByTagName('td')
+boton.addEventListener('click', )
+
+
+mostrarDiscos()
