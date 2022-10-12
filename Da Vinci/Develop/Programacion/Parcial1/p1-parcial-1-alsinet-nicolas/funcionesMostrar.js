@@ -26,6 +26,7 @@
 //     return html
 // }
 let listaDiscos = document.getElementById('disc-list_tabla');
+let listaPistas = document.getElementById('info_pistas-tabla')
 let discosTotal = document.getElementById('total-disc');
 
 function mostrarDiscos () {
@@ -61,10 +62,19 @@ function generaBoton(dato) {
     let boton = document.createElement('button');
     boton.id = dato
     boton.innerHTML = `Ver disco`
+    boton.setAttribute('onclick', `buscarDisco(${dato})`)
     td.appendChild(boton)
     return td
 }
-function crearDisco(disco) {
+function buscarDisco(numero) {
+    for (i = 0; i < discos.length; i++) {
+        if (discos[i].Codigo == numero) {
+            console.log(numero);
+            mostrarDisco(discos[i]);
+        }
+    }
+}
+function mostrarDIsco(disco) {
     document.getElementById('info_disco-nombre').innerHTML = disco.Nombre;
     document.getElementById('info_disco-autor').innerHTML = disco.Autor;
     document.getElementById('info_disco-codigo').innerHTML = disco.Codigo;
@@ -72,23 +82,22 @@ function crearDisco(disco) {
     document.getElementById('info_disco-duracion').innerHTML = calcularDuracion();
     for (i = 0; i < discos.length; i++) {
         let table_row = document.createElement('tr');
-        let table_nombre = document.createElement('td');
-        let table_autor = document.createElement('td');
-        let table_codigo = document.createElement('td');
-        let table_boton = generaBoton(discos[i].Codigo)
-        table_nombre.innerHTML = discos[i].Nombre;
-        table_autor.innerHTML = discos[i].Autor;
-        table_codigo.innerHTML = discos[i].Codigo;
-        table_row.appendChild(table_codigo);
-        table_row.appendChild(table_nombre);
-        table_row.appendChild(table_autor);
-        table_row.appendChild(table_boton);
-        listaDiscos.appendChild(table_row)
+        let table_pista = document.createElement('td');
+        let table_duracion = document.createElement('td');
+        table_pista.innerHTML = disco[i].Nombre;
+        table_duracion.innerHTML = disco[i].Autor;
+        table_row.appendChild(table_pista);
+        table_row.appendChild(table_duracion);
+        listaPistas.appendChild(table_row)     
     }
 }
 
-let boton = document.getElementsByTagName('td')
-boton.addEventListener('click', )
+
+
+
+
+
+
 
 
 mostrarDiscos()
