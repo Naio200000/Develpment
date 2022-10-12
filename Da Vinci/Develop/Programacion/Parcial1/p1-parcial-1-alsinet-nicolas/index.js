@@ -63,7 +63,7 @@ let disco3 = {
 //g
 // Ejemplo de la estructura de un disco:
 
-let codigos = [];
+let codigos = [1,2,3];
 let pistas = [];
 let discos = [disco1, disco2, disco3];
 
