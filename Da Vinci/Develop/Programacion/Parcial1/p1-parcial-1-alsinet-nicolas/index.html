@@ -18,38 +18,19 @@
             <h2>Mis discos</h2>
             <div class="botonera-lista">
                 <div class="botonera">
-                    <button onclick="Cargar();">Cargar nuevo disco</button>
-                    <button onclick="Buscar();">Buscar disco</button>
+                    <button class="boton" onclick="Cargar();">Cargar nuevo disco</button>
+                    <button class="boton" onclick="Buscar();">Buscar disco</button>
                 </div>
                 <div class="disc-list" id="disc-list">
                     <h3>Lista de Discos</h3>
-                    <p id="forro">Total</p>
-                    <p id="total-disc">3</p>
+                    <p>Total</p>
+                    <p id="total-disc"></p>
+                    <p>Promedio Duracion por disco</p>
+                    <p id="total-disc_promedio"></p>
                     <table id="disc-list_tabla" class="disc-list_tabla">
-                        <!-- <tr>
-                            <th>Codigo</th>
-                            <th>Discot</th>
-                            <th>Artista</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>DIsco 1</td>
-                            <td>Yo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Disco 2</td>
-                            <td>Tu</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Disco 3</td>
-                            <td>El</td>
-                        </tr> -->
                     </table>
                 </div>
             </div>
-            
             <div class="info" id="info">
                 <div class="info_disco">
                     <h3 id="info_disco-nombre"></h3>
@@ -63,22 +44,6 @@
                 </div>
                 <div class="info_pistas">
                     <table class="info_pistas-tabla" id="info_pistas-tabla">
-                        <!-- <tr>
-                            <th>Pista</th>
-                            <th>Duracion</th>
-                        </tr>
-                        <tr>
-                            <td>Pista 1</td>
-                            <td>200s</td>
-                        </tr>
-                        <tr>
-                            <td>Pista 2</td>
-                            <td>200s</td>
-                        </tr>
-                        <tr>
-                            <td>Pista 3</td>
-                            <td>200s</td>
-                        </tr> -->
                     </table>
                 </div>
             </div>

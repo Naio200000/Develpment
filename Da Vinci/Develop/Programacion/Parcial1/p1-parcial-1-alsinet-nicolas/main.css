@@ -71,7 +71,7 @@ Botones
     flex: 1 1 30%;
 }
 
-.botonera button {
+.boton {
     margin: .5em 0;
     padding: .25em .5em;
     max-width: 350px;
@@ -84,6 +84,16 @@ Botones
     text-align: center;
     color: #D0E0E3;
 
+}
+table .boton {
+    margin: 0;
+    padding: 0.25em;
+    max-width: auto;
+    border-radius: .5em;
+    background: #D0E0E3;
+    cursor: pointer;
+    font-size: inherit;
+    color: #134F5C;
 }
 /*
 Lista
@@ -103,7 +113,7 @@ Lista
     width: calc(33% - 2rem);
     text-align: right;
 }
-#total-disc {
+#total-disc, #total-disc + p {
     text-align: left;
 }
 .disc-list_tabla {
@@ -119,6 +129,9 @@ Lista
 }
 .rojo {
     color: red;
+}
+.mayorDuracion::after {
+    content: '^';
 }
 /*
 Disco Seleccionado
@@ -153,12 +166,19 @@ Disco Seleccionado
     width: calc(50% - 1rem);
 }
 
-.info_disco :first-child {
+.info_disco > :first-child {
     font-size: 2rem;
 }
 .info_pistas table{
     width: 100%;
     text-align: center;
+}
+.info_disco > div {
+    display: flex;
+    gap: .5em;
+}
+#info_disco-duracion + p {
+    min-width: fit-content;
 }
 .info_pistas-tabla th,
 .info_pistas-tabla td {

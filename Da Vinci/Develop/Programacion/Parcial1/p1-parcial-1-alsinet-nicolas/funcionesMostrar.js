@@ -1,30 +1,5 @@
 let listaDiscos = document.getElementById('disc-list_tabla');
 let listaPistas = document.getElementById('info_pistas-tabla')
-let discosTotal = document.getElementById('total-disc');
-
-function mostrarDiscos () {
-    listaDiscos.innerHTML = '<tr><th>Codigo</th><th>Disco</th><th>Artista</th></tr>';
-    if (discos.length == 0) {
-        discosTotal.innerHTML = 0;
-
-    } else {
-        discosTotal.innerHTML = discos.length;
-        listarDiscos();
-    }
-}
-
-function mostrarDisco(disco) {
-    if (discos.length == 0) {
-        document.getElementById('info_disco-nombre').innerHTML = 'No hay discos'
-    } else {
-    document.getElementById('info_disco-nombre').innerHTML = disco.Nombre;
-    document.getElementById('info_disco-autor').innerHTML = disco.Autor;
-    document.getElementById('info_disco-codigo').innerHTML = disco.Codigo;
-    document.getElementById('info_disco-pistas').innerHTML = disco.Pistas.length;
-    document.getElementById('info_disco-duracion').innerHTML = calcularDuracion(disco.Pistas);
-    listarPistas(disco.Pistas)
-    }
-}
 
 
 function listarDiscos () {
@@ -37,12 +12,15 @@ function listarDiscos () {
         table_nombre.innerHTML = discos[i].Nombre;
         table_autor.innerHTML = discos[i].Autor;
         table_codigo.innerHTML = discos[i].Codigo;
+        if (discos[i].Codigo = mayorDuracion())
+            table_row.setAttribute('class','mayorDuracion')
         table_row.appendChild(table_codigo);
         table_row.appendChild(table_nombre);
         table_row.appendChild(table_autor);
         table_row.appendChild(table_boton);
         listaDiscos.appendChild(table_row)
     }
+
 }
 function listarPistas(array){
     let listaPistas = document.getElementById('info_pistas-tabla');
@@ -67,6 +45,7 @@ function generaBoton(dato) {
     boton.id = dato
     boton.innerHTML = `Ver disco`
     boton.setAttribute('onclick', `buscarDisco(${dato})`)
+    boton.setAttribute('class', `boton`)
     td.appendChild(boton)
     return td
 }
@@ -74,6 +53,7 @@ function buscarDisco(numero) {
     for (i = 0; i < discos.length; i++) {
         if (discos[i].Codigo == numero) {
             mostrarDisco(discos[i]);
+            break
         }
     }
 }
@@ -85,6 +65,25 @@ function calcularDuracion (array){
         total += parseFloat(array[i].Duracion);
     }
     return total
+}
+function calcularPromedio() {
+    let total = 0;
+    for (i = 0; i < discos.length; i++) {
+        total += calcularDuracion(discos[i].Pistas)
+    }
+    return total / discos.length
+}
+function mayorDuracion() {
+    let max_duracion = 0
+    let codigo;
+    for (i = 0; i < discos.length; i++) {
+        let duracion = calcularDuracion(discos[i].Pistas)
+        if (duracion > max_duracion) {
+            mayorDuración = duracion;
+            codigo = i;
+        }
+    }
+    return codigo
 }
 
 mostrarDiscos()

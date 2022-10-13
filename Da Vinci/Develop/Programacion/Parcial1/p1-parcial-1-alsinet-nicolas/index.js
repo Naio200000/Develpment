@@ -3,69 +3,11 @@
 /*
  * Alsinet, Nicolas
  */
-let disco1 = {
-    Nombre: 'Disco1',
-    Autor: 'Yo',
-    Codigo: 1,
-    Pistas: [
-        {
-            Nombre: 'Pista1',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista2',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista3',
-            Duracion: '123',
-        }
-    ]
-};
-let disco2 = {
-    Nombre: 'DIsco2',
-    Autor: 'Yo',
-    Codigo: 2,
-    Pistas: [
-        {
-            Nombre: 'Pista1',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista2',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista3',
-            Duracion: '123',
-        }
-    ]
-};
-let disco3 = {
-    Nombre: 'DIsco3',
-    Autor: 'Yo',
-    Codigo: 3,
-    Pistas: [
-        {
-            Nombre: 'Pista1',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista2',
-            Duracion: '123',
-        },
-        {
-            Nombre: 'Pista3',
-            Duracion: '1230',
-        }
-    ]
-};
-//g
 // Ejemplo de la estructura de un disco:
 
-let codigos = [1,2,3];
+let discos = [];
+let codigos = [];
 let pistas = [];
-let discos = [disco1, disco2, disco3];
 
 // Función Cargar:
 /**
@@ -82,18 +24,47 @@ function Cargar() {
     let disco = armarDisco(nombre, autor, codigo, pistas);
     agregarDisco(disco);
     mostrarDiscos();
+    mostrarDisco(disco)
     return discos;
 }
+function mostrarDiscos () {
+    listaDiscos.innerHTML = '<tr><th>Codigo</th><th>Disco</th><th>Artista</th></tr>';
+    let discosTotal = document.getElementById('total-disc');
+    if (discos.length == 0) {
+        discosTotal.innerHTML = 0;
+        return
+    }
+    discosTotal.innerHTML = discos.length;
+    document.getElementById('total-disc_promedio').innerHTML = calcularPromedio();
+    listarDiscos();
+}
 
-// Función Mostrar:
-const Mostrar = () => {
-    // Variable para ir armando la cadena:
-    let html = generarDiscos();
-    // Cositas:
+function mostrarDisco(disco) {
+    if (discos.length == 0) {
+        document.getElementById('info_disco-nombre').innerHTML = 'No hay discos'
+        return
+    } 
+    document.getElementById('info_disco-nombre').innerHTML = disco.Nombre;
+    document.getElementById('info_disco-autor').innerHTML = disco.Autor;
+    document.getElementById('info_disco-codigo').innerHTML = disco.Codigo;
+    document.getElementById('info_disco-pistas').innerHTML = disco.Pistas.length;
+    document.getElementById('info_disco-duracion').innerHTML = calcularDuracion(disco.Pistas);
+    listarPistas(disco.Pistas)
+}
 
-    // Si modificaste el nombre de la variable para ir armando la cadena, también hacelo acá:
-    document.getElementById('info').innerHTML = html; // <--- ahí es acá
-};
+function Buscar () {
+    buscarDisco(validarNumero('Ingrese el codigo del Disco a buscar', 1, 999));
+}
+
+// // Función Mostrar:
+// const Mostrar = () => {
+//     // Variable para ir armando la cadena:
+//     let html = generarDiscos();
+//     // Cositas:
+
+//     // Si modificaste el nombre de la variable para ir armando la cadena, también hacelo acá:
+//     document.getElementById('info').innerHTML = html; // <--- ahí es acá
+// };
 
 // Todas las funciones que necesites:
 
