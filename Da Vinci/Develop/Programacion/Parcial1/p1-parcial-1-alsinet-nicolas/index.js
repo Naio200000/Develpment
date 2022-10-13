@@ -4,7 +4,7 @@
  * Alsinet, Nicolas
  */
 let disco1 = {
-    Nombre: 'DIsco1',
+    Nombre: 'Disco1',
     Autor: 'Yo',
     Codigo: 1,
     Pistas: [
@@ -56,7 +56,7 @@ let disco3 = {
         },
         {
             Nombre: 'Pista3',
-            Duracion: '123',
+            Duracion: '1230',
         }
     ]
 };

@@ -117,6 +117,9 @@ Lista
 .disc-list_tabla  td {
     cursor: pointer;
 }
+.rojo {
+    color: red;
+}
 /*
 Disco Seleccionado
 */
@@ -133,13 +136,16 @@ Disco Seleccionado
 .info_pistas {
     background: #134F5C;
     flex: 1 1 100%;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     overflow-y: auto;
-    max-height: 15vh;
+    max-height: 17vh;
     flex: 1 1 55%;
 }
 .info_disco {
     border-radius: .5em 0 0 .5em;
+}
+.info_pistas {
+    border-radius: 0 .5em .5em 0;
 }
 .info_disco > * {
     display: inline-block;
