@@ -1,7 +1,7 @@
-let listaDiscos = document.getElementById('disc-list_tabla');
-let listaPistas = document.getElementById('info_pistas-tabla')
-
-
+/**
+ * Lista los discos que ya fueron ingresados con su nombre, autor y codigo
+ * llama a la funcion que genera el boton para buscar un disco en particular
+ */
 function listarDiscos () {
     for (i = 0; i < discos.length; i++) {
         let table_row = document.createElement('tr');
@@ -12,16 +12,17 @@ function listarDiscos () {
         table_nombre.innerHTML = discos[i].Nombre;
         table_autor.innerHTML = discos[i].Autor;
         table_codigo.innerHTML = discos[i].Codigo;
-        if (discos[i].Codigo = mayorDuracion())
-            table_row.setAttribute('class','mayorDuracion')
         table_row.appendChild(table_codigo);
         table_row.appendChild(table_nombre);
         table_row.appendChild(table_autor);
         table_row.appendChild(table_boton);
         listaDiscos.appendChild(table_row)
     }
-
 }
+/**
+ * Genera el listado de las pistas de cada disco mostrado
+ * @param {Array de objetos} array 
+ */
 function listarPistas(array){
     let listaPistas = document.getElementById('info_pistas-tabla');
     listaPistas.innerHTML = '<tr><th>Pista</th><th>Duración</th></tr>';
@@ -39,6 +40,11 @@ function listarPistas(array){
         listaPistas.appendChild(table_row)     
     }
 }
+/**
+ * Se ingresa el codigo del disco y genera un boton cuya ID es la misma que el codigo
+ * @param {Numero ID del disco} dato 
+ * @returns Boton con ID del disco y el la clase boton
+ */
 function generaBoton(dato) {
     let td = document.createElement('td');
     let boton = document.createElement('button');
@@ -49,6 +55,9 @@ function generaBoton(dato) {
     td.appendChild(boton)
     return td
 }
+/**
+ * Se ingresa un codigo de un boton y lo muestra
+ */
 function buscarDisco(numero) {
     for (i = 0; i < discos.length; i++) {
         if (discos[i].Codigo == numero) {
@@ -56,16 +65,23 @@ function buscarDisco(numero) {
             break
         }
     }
+    document.getElementById('info_disco-nombre').innerHTML = 'No se encontró disco con ese código';
 }
-
-
+/**
+ * Se ingresa el array de las mistas y se calcula suma la duracion de cada pista
+ * @param {Array de objetos} array 
+ * @returns Suma de todas las pistas
+ */
 function calcularDuracion (array){
     let total = 0;
     for (i = 0; i < array.length; i++) {
-        total += parseFloat(array[i].Duracion);
+        total += array[i].Duracion;
     }
     return total
-}
+}/**
+ * Se llama a la funcion calcular duracion por cada disco que se encuentra en el array discos y se suma para sacar el promedio de la duracion
+ * @returns 
+ */
 function calcularPromedio() {
     let total = 0;
     for (i = 0; i < discos.length; i++) {
@@ -73,18 +89,7 @@ function calcularPromedio() {
     }
     return total / discos.length
 }
-function mayorDuracion() {
-    let max_duracion = 0
-    let codigo;
-    for (i = 0; i < discos.length; i++) {
-        let duracion = calcularDuracion(discos[i].Pistas)
-        if (duracion > max_duracion) {
-            mayorDuración = duracion;
-            codigo = i;
-        }
-    }
-    return codigo
-}
 
+/*Se ejecutan estas funciones al iniciar el programa por si hay discos cargados. */
 mostrarDiscos()
 mostrarDisco (discos[0])

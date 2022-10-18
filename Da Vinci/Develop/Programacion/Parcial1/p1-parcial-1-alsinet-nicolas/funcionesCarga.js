@@ -77,7 +77,7 @@ function pedirPista () {
 }
 /**
  * Un loop que pide pistas indefinidamente
- * @returns Array de objetos con las pistas
+ * @returns Array de objetos con las pistas.
  */
 function armarPistas() {
     pistas = [];

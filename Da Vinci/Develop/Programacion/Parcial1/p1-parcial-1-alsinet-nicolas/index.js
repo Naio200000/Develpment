@@ -3,18 +3,19 @@
 /*
  * Alsinet, Nicolas
  */
-// Ejemplo de la estructura de un disco:
 
+//Declaración de variables globales
 let discos = [];
 let codigos = [];
 let pistas = [];
+let listaDiscos = document.getElementById('disc-list_tabla');
+let listaPistas = document.getElementById('info_pistas-tabla')
 
 // Función Cargar:
 /**
  * Hace todo el llamado a los prompts para perdir los datos y genera el disco
  * el cual se pushea en el array de discos
  * @returns Array de discos 
- * Faltaría validar si apretó por error.
  */
 function Cargar() {
     let nombre = validaTexto('Ingrese el Nombre del Disco', true);
@@ -27,6 +28,10 @@ function Cargar() {
     mostrarDisco(disco)
     return discos;
 }
+/**
+ * Una ves cargado un disco se ejecuta para mostrar el listado de todos los discos
+ * @returns 
+ */
 function mostrarDiscos () {
     listaDiscos.innerHTML = '<tr><th>Codigo</th><th>Disco</th><th>Artista</th></tr>';
     let discosTotal = document.getElementById('total-disc');
@@ -38,7 +43,12 @@ function mostrarDiscos () {
     document.getElementById('total-disc_promedio').innerHTML = calcularPromedio();
     listarDiscos();
 }
-
+/**
+ * Ingresa el objeto disco desde el cual se toman todos los datos a ser mostrados y llama a la funcion que lista las pistas
+ 
+ * @param {objeto disco} disco 
+ * @returns 
+ */
 function mostrarDisco(disco) {
     if (discos.length == 0) {
         document.getElementById('info_disco-nombre').innerHTML = 'No hay discos'
@@ -51,21 +61,9 @@ function mostrarDisco(disco) {
     document.getElementById('info_disco-duracion').innerHTML = calcularDuracion(disco.Pistas);
     listarPistas(disco.Pistas)
 }
-
+/**
+ * Llama a la funcion buscar disco y valida el ingreso de un valor apropiado.
+ */
 function Buscar () {
     buscarDisco(validarNumero('Ingrese el codigo del Disco a buscar', 1, 999));
 }
-
-// // Función Mostrar:
-// const Mostrar = () => {
-//     // Variable para ir armando la cadena:
-//     let html = generarDiscos();
-//     // Cositas:
-
-//     // Si modificaste el nombre de la variable para ir armando la cadena, también hacelo acá:
-//     document.getElementById('info').innerHTML = html; // <--- ahí es acá
-// };
-
-// Todas las funciones que necesites:
-
-

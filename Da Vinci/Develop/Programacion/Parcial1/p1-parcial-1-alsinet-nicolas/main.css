@@ -137,6 +137,7 @@ Lista
 Disco Seleccionado
 */
 .info {
+    
     margin: 1rem;
     padding: 1rem;
     background: white;
@@ -165,7 +166,9 @@ Disco Seleccionado
     padding: .25em 1rem;
     width: calc(50% - 1rem);
 }
-
+#info_disco-nombre {
+    font-size: 1.5rem;
+}
 .info_disco > :first-child {
     font-size: 2rem;
 }
