@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+img {
+    display: block;
+    width: 100%;
+}
+/*Hero and header*/
+.hero {
+    position: relative;
+    margin-bottom: 3rem;
+}
+.hero img {
+    max-width: 650px;
+}
+.titulo {
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(255,255,255,.5);
+    border: pink solid;
+    border-radius: 8%;
+}
+
+/*Tarjetas de personajes*/
+
+.personajes {
+    margin: 1rem 0;
+    padding: .5rem 0;
+}
+.personaje-titulo {
+    flex: 1 100%;
+    text-transform: uppercase;
+    text-align: center;
+}
