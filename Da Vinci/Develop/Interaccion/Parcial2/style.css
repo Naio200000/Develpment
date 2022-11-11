@@ -1,4 +1,20 @@
+/* * {
+    outline: 1px red solid;
+} */
 .navbar-brand > img {
     width: 100%;
-    max-width: 45px;
+    max-width: 40px;
 }
+img {
+    display: block;
+    width: 100%;
+}
+.container-custom,
+.tienda {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+  
+
+  
