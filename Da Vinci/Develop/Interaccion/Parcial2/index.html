@@ -8,20 +8,29 @@
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+<script src="./js/producto.js"></script>
+<script src="./js/carrito.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md bg-light sticky-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-light fixed-top container-fluid">
+            <div class="container align-items-center">
               <a class="navbar-brand " href="#"><img src="./img/Logo/Komei_Juku_mon.svg.png" alt=""></a>
               <h1 class="">Komei Juku</h1>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler ms-auto m-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div id="minicarrito"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg><span id="minicarrito-cantidad">1</span></div>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div id="minicarrito" class="order-md-last minicarrito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                </svg>
+                <span id="minicarrito-precio">0</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <span id="minicarrito-cantidad">0</span>
+              </div>
+              <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
@@ -37,7 +46,6 @@
                   </li>
                 </ul>
               </div>
-
             </div>
           </nav>
           <div id="carouselExampleIndicators" class="carousel slide hero" data-bs-ride="true">
@@ -68,15 +76,15 @@
           </div>
     </header>
     <main>
-      <section class="info ">
+      <section class="info container">
         <h2>Titulo algo</h2>
-        <section class="steps container-custom">
+        <section class="container-fluid">
           <div class="row">
             <div class="col-12 col-sm-6 d-md-flex justify-content-md-ceneter">
-              <img src="./img/hero/IMG_2340.jpg" alt="Coffe Flavour" class="img-fluid pb-4 steps__section-thumbnail" loading="lazy">
+              <img src="./img/hero/IMG_2340.jpg" alt="Coffe Flavour" class="img-fluid pb-4" >
             </div>
             <div class="col-12 col-sm-6 align-self-center justify-content-md-ceneter">
-              <div class="steps__content-width">
+              <div class="">
                 <h1 class="h2 mb-4">Muso Jikiden Eishin Ryu</h1>
                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
@@ -84,14 +92,14 @@
             </div>
           </div>
         </section>
-        <section class="steps steps--background">
-          <div class="container-custom">
+        <section class="">
+          <div class="container-fluid">
             <div class="row">
               <div class="col-12 col-sm-6 d-md-flex justify-content-md-ceneter order-sm-1">
-                <img src="./img/hero/IMG_2340.jpg" alt="Health Benefits" class="img-fluid pb-4 steps__section-thumbnail" loading="lazy">
+                <img src="./img/hero/IMG_2340.jpg" alt="Health Benefits" class="img-fluid pb-4 ">
               </div>
               <div class="col-12 col-sm-6 align-self-center justify-content-md-ceneter">
-                <div class="steps__content-width">
+                <div class="">
                   <h1 class="h2 mb-4">Sekiguchi Sensei</h1>
                   <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
                   <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
@@ -100,13 +108,13 @@
             </div>
           </div>
         </section>
-        <section class="steps container-custom">
+        <section class="container-fluid">
           <div class="row">
             <div class="col-12 col-sm-6 d-md-flex justify-content-md-ceneter">
-              <img src="./img/hero/IMG_2339.jpg" alt="Essential Nutrients" class="img-fluid pb-4 steps__section-thumbnail" width="553" height="746" loading="lazy">
+              <img src="./img/hero/IMG_2339.jpg" alt="Essential Nutrients" class="img-fluid pb-4">
             </div>
             <div class="col-12 col-sm-6 align-self-center justify-content-md-ceneter">
-              <div class="steps__content-width">
+              <div class="">
                 <h1 class="h2 mb-4">Komei Juku Argentina</h1>
                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia totam dolorem quasi! Quis fugiat totam id fuga non distinctio incidunt amet nesciunt itaque, tempore repellat eos natus quo mollitia laborum.</p>
@@ -115,106 +123,34 @@
           </div>
         </section>
       </section>
-      <section class="tienda">
-        <article class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 clasess">
-          <div class="col">
+      <section class="tienda container">
+        <h2>TIenda</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corrupti, voluptates at eum tempore deleniti mollitia placeat nostrum obcaecati, debitis nihil neque ex sint? Quaerat molestias necessitatibus quidem provident et.</p>
+        <article class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 my-2" id="productos">
+          <!-- <div class="col">
             <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
+              <img src="./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg" class="card-img-top" alt="...">
+              <span class="mx-2 ms-auto">Clases</span>
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button class="btn btn-primary">Agregar 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+                </button>
+                <span class="d-inline-block ms-auto">$1000</span>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 ropa">
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 equipos">
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card" >
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+          </div>-->
         </article>
       </section>
+      <section class="gallery">
     </main>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script src="js/index.js"></script>
 </body>
 </html>
