@@ -1,0 +1,75 @@
+{
+	"productos":[{
+					"id": "1",
+					"nombre":"Clase Semanal",
+					"descrip":"Disfruta de una clase por semana en los días queprefieras",
+					"precio":"4000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Clases"
+					},{
+					"id": "2",
+					"nombre":"Iaidogi",
+					"descrip":"Disfruta de dos clase por semana en los días queprefieras",
+					"precio":"5000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Clases"
+					},{
+					"id": "3",
+					"nombre":"Iaidogi",
+					"descrip":"Disfruta de tres clase por semana en los días queprefieras",
+					"precio":"6000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Clases"
+					},{
+					"id": "4",
+					"nombre":"Iaidogi",
+					"descrip":"Keikogi para entrenamiento, 100% Algodón",
+					"precio":"2500",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Ropa"
+					},{
+					"id": "5",
+					"nombre":"Obi",
+					"descrip":"Cituron de entrenamiento, 100% Algodón",
+					"precio":"1500",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Ropa"
+					},{
+					"id": "6",
+					"nombre":"Hakama",
+					"descrip":"Hakama para entrenamiento, 100% Algodon",
+					"precio":"3500",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Ropa"
+					},{
+					"id": "7",
+					"nombre":"Shinken",
+					"descrip":"Katana de entenamiento con filo, Hecha en acero 1095",
+					"precio":"20000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Equipos"
+					},{
+					"id": "8",
+					"nombre":"Iaito",
+					"descrip":"Katana de entenamiento sin filo, hecha dealeacion de Aluminio",
+					"precio":"18000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Equipos"
+					},{
+					"id": "9",
+					"nombre":"Bokuto",
+					"descrip":"Katana de madera para entrenamiento",
+					"precio":"10000",
+					"imagen":"./img/productos/D_NQ_NP_859333-MLA32136283949_092019-O.jpg",
+					"altImagen":"Texto alt de Imanges",
+					"categoria":"Equipos"
+					}
+]}
