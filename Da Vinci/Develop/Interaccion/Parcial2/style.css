@@ -13,7 +13,11 @@ img {
     width: 100%;
     padding: 0 1rem;
     margin: 0 auto;
-  }
-  
+}
+.hero {
+    padding-top: 80px;
+}
+.titulo {
+    display: none;
 
-  
+}
