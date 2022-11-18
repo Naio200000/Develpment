@@ -35,8 +35,13 @@ class Producto {
         return precioBoton;
     }
     creaCardBody () {
-        let productoNombre = d.createElement('h5');
-        productoNombre.className = 'card-title';
+        //type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+        let productoNombre = d.createElement('h3');
+        productoNombre.setAttribute('type', 'button');
+        productoNombre.setAttribute('class', 'btn btn-primary card-title');
+        productoNombre.setAttribute('data-bs-toggle', 'modal');
+        productoNombre.setAttribute('data-bs-target', '#staticBackdrop')
+        // productoNombre.className = 'card-title';
         productoNombre.innerHTML = this.nombre;
         let productoDescrip = d.createElement('p');
         productoDescrip.className = 'card-text';
