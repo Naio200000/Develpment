@@ -5,7 +5,7 @@
 					"descrip":"Disfruta de una clase por semana en los días que prefieras",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"4000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/clases-01.jpg","./img/productos/clases-02.jpg","./img/productos/clases-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Clases"
 					},{
@@ -14,7 +14,7 @@
 					"descrip":"Disfruta de dos clase por semana en los días que prefieras",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"5000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/clases-01.jpg","./img/productos/clases-02.jpg","./img/productos/clases-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Clases"
 					},{
@@ -23,16 +23,16 @@
 					"descrip":"Disfruta de tres clase por semana en los días que prefieras",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"6000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/clases-01.jpg","./img/productos/clases-02.jpg","./img/productos/clases-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Clases"
 					},{
 					"id": "4",
 					"nombre":"Iaidogi",
-					"descrip":"Keikogi para entrenamiento, 100% Algodón",
+					"descrip":"Keikogi para entrenamiento, 100% Tetron",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"2500",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/keikogi-02.jpg","./img/productos/keikogi-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Ropa"
 					},{
@@ -41,16 +41,16 @@
 					"descrip":"Cituron de entrenamiento, 100% Algodón",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"1500",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/obi-02.jpg","./img/productos/obi-01.jpg","./img/productos/obi-03.jfif"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Ropa"
 					},{
 					"id": "6",
 					"nombre":"Hakama",
-					"descrip":"Hakama para entrenamiento, 100% Algodon",
+					"descrip":"Hakama para entrenamiento, 100% Tetron",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"3500",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos//hakama-01.jpg","./img/productos/hakama-02.jpg","./img/productos//hakama-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Ropa"
 					},{
@@ -59,7 +59,7 @@
 					"descrip":"Katana de entenamiento con filo, Hecha en acero 1095",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"20000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/katana-01.jpg","./img/productos/katana-02.webp","./img/productos/katana-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Equipos"
 					},{
@@ -68,7 +68,7 @@
 					"descrip":"Katana de entenamiento sin filo, hecha dealeacion de Aluminio",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"18000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/iaito-01.jpg","./img/productos/iaito-02.jpg","./img/productos/iaito-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Imanges3"],
 					"categoria":"Equipos"
 					},{
@@ -77,7 +77,7 @@
 					"descrip":"Katana de madera para entrenamiento",
 					"descrip_larga":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a, itaque asperiores nobis repudiandae vel perferendis, quae iure vero explicabo quidem voluptatibus iusto inventore sed commodi, nemo cupiditate ab deserunt.",
 					"precio":"10000",
-					"imagen":["./img/productos/keikogi-01.jpg","./img/productos/hakama-01.jpg","./img/productos/katana-01.jpg"],
+					"imagen":["./img/productos/bokuto-01.jpg","./img/productos/bokuto-02.webp","./img/productos/bokuto-03.jpg"],
 					"altImagen":["Texto alt de Imanges1","Texto alt de Imanges2","Texto alt de Iman3ges"],
 					"categoria":"Equipos"
 					}
