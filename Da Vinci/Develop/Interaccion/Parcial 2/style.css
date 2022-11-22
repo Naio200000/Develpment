@@ -1,0 +1,29 @@
+/* * {
+    outline: 1px red solid;
+} */
+.navbar-brand > img {
+    width: 100%;
+    max-width: 40px;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.tienda {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+.hero {
+    padding-top: 72px;
+}
+.minicarrito {
+    min-width: 200px;
+}
+.social,
+.datos {
+    list-style: none;
+}
+.imagen-perfil {
+    max-width: 250px;
+}
