@@ -9,7 +9,7 @@ const d = document
 const htmlProductos = d.querySelector('#productos');
 const exampleModal = d.getElementById('exampleModal');
 const selectorCategoria = d.getElementById('categoria-producto');
-console.log(selectorCategoria);
+const btn_miniCarrito = d.querySelectorAll('.minicarrito-cantidad');
 // Declaracion de Clases
 /**
  * Clase Productos con sus metodos
@@ -45,7 +45,7 @@ class Producto {
     creaPrecioBoton () {
         let productoPrecio = d.createElement('span');
         productoPrecio.className = 'col';
-        productoPrecio.innerHTML = `$${this.precio}`;
+        productoPrecio.innerHTML = `$${this.precio}.00`;
         let productoBoton = d.createElement('button');
         productoBoton.className = 'btn btn-primary col';
         productoBoton.id = `${this.id}boton_agregar`;
@@ -140,7 +140,7 @@ class Producto {
         }
         d.getElementById('categoriaProducto').innerHTML = this.categoria;
         d.getElementById('descripProducto').innerHTML = this.descrip_larga;
-        d.getElementById('precioProducto').innerHTML = this.precio;
+        d.getElementById('precioProducto').innerHTML = this.precio.toFixed(2);
         d.getElementById('precioCuotas').innerHTML = (this.precio / 6).toFixed(2);
         this.agregarBotonModal();
     }
@@ -152,8 +152,8 @@ class Carrito {
         this.producto = [];
     }
     agregar(objeto){
-        
         this.producto.push(objeto);
+
     }
     armarMiniCarrito (clase, valor) {
         let span = d.getElementsByClassName(clase);
@@ -167,6 +167,46 @@ class Carrito {
             total += parseInt(this.producto[i].precio);
         }
         return total
+    }
+
+    armarCarritoContenedores(i) {
+        let divImagen = d.createElement('div');
+        divImagen. setAttribute('class', 'productoCarritoImagen mx-auto');
+        let imagen = d.createElement('img');
+        imagen.setAttribute('src', this.producto[i].imagen[0]);
+        imagen.setAttribute('alt', this.producto[i].altImagen[0]);
+        divImagen.appendChild(imagen);
+        let divTexto = d.createElement('div');
+        divTexto. setAttribute('class', 'productoCarritoTexto my-auto');
+        let pTitulo = d.createElement('p');
+        let pDescrip = d.createElement('p');
+        pTitulo.innerHTML = this.producto[i].nombre;
+        pDescrip.innerHTML = this.producto[i].descrip;
+        divTexto.append(pTitulo, pDescrip);
+        let divPrecio = d.createElement('div');
+        divPrecio.setAttribute('class', 'productoCarritoPrecio ms-auto');
+        divPrecio.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+        <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+        </svg>`;
+        let spanPrecio = d.createElement('span');
+        spanPrecio.id = 'productoCarritoPrecio';
+        spanPrecio.innerHTML = this.producto[i].precio;
+        divPrecio.appendChild(spanPrecio);
+        let divContenedor = d.createElement('div');
+        divContenedor.setAttribute('class', 'contenedor rounded-2')
+        divContenedor.append(divImagen, divTexto,divPrecio);
+        console.log(divContenedor);
+        return divContenedor
+
+    }
+    armarCarrito(){
+        let contenedorProductosCarrito = d.getElementById('contenedorProductosCarrito');
+        contenedorProductosCarrito.innerHTML = ''
+        for (let i = 0; i < carrito.producto.length; i++) {   
+            contenedorProductosCarrito.appendChild(this.armarCarritoContenedores(i));
+        }
+        d.getElementById('carritoPrecioProducto').innerHTML = this.calcularTotal();;
+        d.getElementById('carritoPrecioTotalCuota').innerHTML = (this.calcularTotal() / 6).toFixed(2);
     }
 };
 /* Armado de Objetos */
@@ -206,6 +246,13 @@ function filtrarProductos(valor) {
     }
     return productosFiltrados
 }
+function btn_carrito() {
+    for (let i = 0; i < btn_miniCarrito.length; i++){
+        btn_miniCarrito[i].parentNode.addEventListener('click', () => {
+            carrito.armarCarrito();
+        })
+    }
+}
 selectorCategoria.addEventListener('change', () => {
     if (selectorCategoria.value == 'Todas') {
         mostrarProductos (productos);
@@ -213,9 +260,10 @@ selectorCategoria.addEventListener('change', () => {
         mostrarProductos (filtrarProductos(selectorCategoria.value));
     }
 })
+
 mostrarProductos (productos);
 mostrarMiniCarrito();
-
+btn_carrito();
 /**
  * Funciones de Bootstrap
  */

@@ -9,6 +9,10 @@ img {
     display: block;
     width: 100%;
 }
+.hero {
+    max-width: 1200px;
+    margin: auto;
+}
 .tienda {
     width: 100%;
     padding: 0 1rem;
@@ -26,4 +30,66 @@ img {
 }
 .imagen-perfil {
     max-width: 250px;
+}
+
+
+.contenedor {
+    border: thin solid grey;
+    display: grid;
+
+    padding: 10px;
+    gap: 10px;
+
+    /* grid-template-columns: [inicio] 1fr [fin-col-1 inicio-col-2] 1fr [fin-col-2] 1fr [final];
+    grid-template-rows: repeat(3, 1fr); */
+
+
+
+    grid-template-areas:    "imagen nada  cerrar"
+                            " texto texto precio";
+}
+
+/*MIS ITEMS GRID, ESTOS SON LOS HIJOS DIRECTOS DEL CONTENEDOR*/
+
+
+.productoCarritoImagen {
+    grid-area: imagen;
+
+}
+
+.productoCarritoTexto {
+    grid-area: texto;
+
+}
+
+.productoCarritoCerrar {
+    grid-area: cerrar;
+}
+
+.productoCarritoPrecio {
+    grid-area: precio;
+}
+
+@media (min-width: 576px) {
+    .contenedor {
+        grid-template-areas:    "imagen texto   texto   texto   cerrar"
+                                "imagen texto   texto   texto   precio";
+    }
+ }
+
+@media (min-width: 768px) {
+
+ }
+
+@media (min-width: 992px) { 
+    .contenedorProductosCarrito {
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 1200px) { 
+
+}
+@media (min-width: 1400px) { 
+
 }
