@@ -1,4 +1,4 @@
-import misProductos from '../productos.json' assert {type: 'json'};
+import misProductos from '../productos.json' assert { type: 'json' };
 // 'use strict';
 
 /*
